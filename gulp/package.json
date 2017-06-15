@@ -1,0 +1,17 @@
+{
+	"name": "verkhoumov.ru",
+	"version": "1.0.0",
+	"description": "Project minificator",
+	"author": "Dmitriy Verkhoumov",
+	"license": "MIT",
+	"devDependencies": {
+		"gulp": "^3.9.1",
+		"run-sequence": "^1.2.2",
+		"gulp-concat": "^2.6.1",
+		"gulp-uglify": "^3.0.0",
+		"gulp-clean-css": "^3.4.2",
+		"del": "^3.0.0",
+		"gulp-autoprefixer": "^4.0.0",
+		"gulp-tinypng": "^1.0.2"
+	}
+}

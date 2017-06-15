@@ -1,0 +1,9 @@
+User-agent: *
+
+Disallow: /ajax/*
+Disallow: /cron/*
+Disallow: /*.html
+
+Host: verkhoumov.ru
+
+Sitemap: https://verkhoumov.ru/sitemap.xml

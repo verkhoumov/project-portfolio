@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&subset=cyrillic,cyrillic-ext,latin-ext');
+
+/**
+ *  Ключевые стили.
+ */
+html {
+	height: 100%;
+    min-height: 100%;
+}
+
+body {
+	min-height: 100%;
+
+	background: url(/resources/img/bg-code.png) center center no-repeat, #25184c;
+	background-size: cover;
+
+	font-family: 'Roboto', -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+	font-size: 16px;
+	font-weight: 300;
+}
+
+header,
+main,
+footer {
+	width: 100%;
+}
+
+/**
+ *  Контейнеры.
+ */
+.container-wrapper {
+	padding: 30px 0;
+}
+
+.container-wrapper-header {
+
+}
+
+.container-wrapper-error {
+	padding: 0;
+}
+
+.container-wrapper-footer {
+	padding-top: 50px;
+}
+
+/**
+ *  Изображения.
+ */
+.image {
+	display: inline-block;
+}
+
+.image img {
+	width: 100%;
+	height: 100%;
+	border-radius: 3px;
+}
+
+.image a {
+	display: block;
+}
+
+.image a:hover {
+	opacity: 0.75;
+}
+
+/**
+ *  Текст.
+ */
+p {
+	margin: 0;
+	line-height: 1.4;
+	color: #7e71a5;
+}
+
+/**
+ *  Ссылки.
+ */
+a {
+	color: #f8f6ff;
+	text-decoration: none;
+}
+
+a:focus,
+a:hover {
+	text-decoration: none;
+}
+
+a:focus {
+	color: inherit;
+}
+
+a:hover {
+	color: #7e71a5;
+}
+
+.underline {
+	border-bottom: 1px solid;
+	white-space: nowrap;
+}
+
+/**
+ *  Шапка страницы.
+ */
+header .image {
+	width: 60px;
+	max-width: 60px;
+	height: 60px;
+}
+
+header h1 {
+	font-family: inherit;
+	font-size: 20px;
+    font-weight: 300;
+    color: #f8f6ff;
+    margin: 0;
+    margin-bottom: 4px;
+}
+
+header p {
+	font-size: 14px;
+	margin: 0;
+}
+
+/**
+ *  Контент страницы.
+ */
+main h2 {
+	font-family: inherit;
+	font-size: 24px;
+    font-weight: 300;
+    color: #f8f6ff;
+    line-height: 1;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+main h2.error-404 {
+	font-size: 60px;
+}
+
+main p {
+	font-size: 16px;
+}
+
+main p + p {
+	margin-top: 10px;
+}
+
+/**
+ *  Подвал страницы.
+ */
+footer p {
+	font-size: 12px;
+}

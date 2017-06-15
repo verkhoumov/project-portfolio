@@ -1,0 +1,228 @@
+.icon {
+	position: relative;
+}
+
+.icon::before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 50%;
+	margin-top: -10px;
+	left: 50%;
+	margin-left: -10px;
+	width: 20px;
+	height: 20px;
+	background-image: url(/resources/img/sprite.png);
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-size: 400px 137px;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
+	.icon::before {
+		background-image: url(/resources/img/sprite@2x.png);
+	}
+}
+
+/**
+ *  Размер под большие иконки.
+ */
+.icon-lg::before {
+	width: 25px;
+	height: 24px;
+	margin-top: -12px;
+	margin-left: -12.5px;
+}
+
+/**
+ *  Позиционирование иконок.
+ */
+.icon-by-left {
+	padding-left: 30px;
+}
+
+.icon-by-left::before {
+	left: 0;
+	margin-left: 0;
+	right: auto;
+}
+
+.icon-by-right {
+	padding-right: 30px;
+}
+
+.icon-by-right::before {
+	right: 0;
+	margin-left: 0;
+	left: auto;
+}
+
+.icon-lg.icon-by-left {
+	padding-left: 35px;
+}
+
+.icon-lg.icon-by-left::before {
+	left: 0;
+	margin-left: 0;
+	right: auto;
+}
+
+.icon-lg.icon-by-right {
+	padding-right: 35px;
+}
+
+.icon-lg.icon-by-right::before {
+	right: 0;
+	margin-left: 0;
+	left: auto;
+}
+
+/**
+ *  Позиционирование иконок внутри кнопок.
+ */
+.button.icon-by-left {
+	padding-left: 45px;
+}
+
+.button.icon-by-left::before {
+	left: 15px;
+	margin-left: 0;
+	right: auto;
+}
+
+.button.icon-by-right {
+	padding-right: 45px;
+}
+
+.button.icon-by-right::before {
+	right: 15px;
+	margin-left: 0;
+	left: auto;
+}
+
+.button.icon-lg.icon-by-left {
+	padding-left: 50px;
+}
+
+.button.icon-lg.icon-by-left::before {
+	left: 15px;
+	margin-left: 0;
+	right: auto;
+}
+
+.button.icon-lg.icon-by-right {
+	padding-right: 50px;
+}
+
+.button.icon-lg.icon-by-right::before {
+	right: 15px;
+	margin-left: 0;
+	left: auto;
+}
+
+/**
+ *  Иконки.
+ */
+.icon-location::before {
+	background-position: 0 0;
+}
+
+.icon-age::before {
+	background-position: -20px 0;
+}
+
+.icon-expirience::before {
+	background-position: -40px 0;
+}
+
+.icon-projects::before {
+	background-position: -60px 0;
+}
+
+.icon-send::before {
+	background-position: -80px 0;
+}
+
+.icon-user::before {
+	background-position: -100px 0;
+}
+
+.icon-play::before {
+	background-position: -120px 0;
+	left: 55%;
+}
+
+.icon-location-lg::before {
+	background-position: -140px 0;
+}
+
+.icon-message::before {
+	background-position: -160px 0;
+}
+
+.icon-skype::before {
+	background-position: -180px 0;
+}
+
+.icon-menu::before {
+	background-position: -200px 0;
+}
+
+.icon-progress::before {
+	background-position: -220px 0;
+}
+
+.icon-personal::before {
+	background-position: -240px 0;
+	margin-top: -11px;
+}
+
+.icon-start::before {
+	background-position: -260px 0;
+}
+
+.icon-finish::before {
+	background-position: -280px 0;
+}
+
+.icon-github-sm::before {
+	background-position: -300px 0;
+}
+
+.icon-up::before {
+	background-position: -320px 0;
+}
+
+.icon-down::before {
+	background-position: -340px 0;
+}
+
+.icon-eye::before {
+	background-position: 0 -20px;
+}
+
+.icon-eye-close::before {
+	background-position: -25px -20px;
+}
+
+.icon-vk::before {
+	background-position: -50px -20px;
+}
+
+.icon-github::before {
+	background-position: -75px -20px;
+}
+
+.icon-more::before {
+	height: 30px;
+	background-position: 0 -44px;
+	margin-top: -15px;
+}
+
+.icon-brain::before {
+	width: 58px;
+	height: 63px;
+	background-position: 0 -74px;
+	margin-top: -31.5px;
+	margin-left: -29px;
+}

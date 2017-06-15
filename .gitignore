@@ -1,0 +1,6 @@
+node_modules/
+logs/
+.gulp/
+private.js
+private.php
+TODO.txt
