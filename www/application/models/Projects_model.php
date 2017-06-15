@@ -173,8 +173,10 @@ class Projects_model extends MY_Model
 	public function search_by_category($query = NULL)
 	{
 		$this->db
-			->where('`C`.`code`', $query)
-			->or_where('`C`.`name`', $query);
+			->group_start()
+				->where('`C`.`code`', $query)
+				->or_where('`C`.`name`', $query)
+			->group_end();
 	}
 
 	/**
