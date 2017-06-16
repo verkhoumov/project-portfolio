@@ -87,21 +87,21 @@
 
 			// Запоминаем полученные проекты по годам.
 			$.each(projects.projects, function(index, data) {
-				projectsListTemp[data.year] = data;
+				projectsListTemp['+' + data.year] = data;
 			});
 
 			// Наполняем уже имеющиеся года новыми проектами.
 			$.each(projectsList.projects, function(i1, data) {
-				if (typeof projectsListTemp[data.year] !== 'undefined') {
-					$.each(projectsListTemp[data.year].items, function(i2, item) {
+				if (typeof projectsListTemp['+' + data.year] !== 'undefined') {
+					$.each(projectsListTemp['+' + data.year].items, function(i2, item) {
 						projectsList.projects[i1].items.push(item);
 					});
 
-					delete projectsListTemp[data.year];
+					delete projectsListTemp['+' + data.year];
 				}
 			});
 
-			// Добавляем проекты за новые года.
+			// Добавляем проекты за старые года.
 			$.each(projectsListTemp, function(index, data) {
 				projectsList.projects.push(data);
 			});
