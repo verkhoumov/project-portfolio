@@ -45,7 +45,7 @@ class Skills_model extends MY_Model
 			$this->db
 				->select('`S`.*')
 				->from("{$this->db_projects_skills} AS `PS`")
-				->join("{$this->db_skills} AS `S`", "`PS`.`project_id` = {$project_id} AND `S`.`id` = `PS`.`skill_id` AND `S`.`visible` = 1")
+				->join("{$this->db_skills} AS `S`", "`PS`.`project_id` = {$project_id} AND `S`.`id` = `PS`.`skill_id`")
 				->order_by('`S`.`name`', 'ASC');
 
 			// Выполняем запрос.

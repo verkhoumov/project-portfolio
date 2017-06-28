@@ -112,13 +112,19 @@ function default_title_prefix($value = '', $type = 'default')
 	$types = [
 		'default'  => '', 
 		'year'     => ' за %d год',
+		'personal' => ' для личного использования',
 		'category' => ' категории «%s»',
 		'tech'     => ' с технологией «%s»',
 		'tag'      => ' с пометкой «%s»',
 		'other'    => ' по запросу «%s»'
 	];
-
-	return sprintf($types[$type], $value);
+	
+	if (array_key_exists($type, $types))
+	{
+		return sprintf($types[$type], $value);
+	}
+	
+	return sprintf($types['other'], $value);
 }
 
 /**
@@ -130,6 +136,15 @@ function default_title_prefix($value = '', $type = 'default')
  */
 function default_description_prefix($value = '', $type = 'default')
 {
+	$types = [
+		'personal' => ', разработанных в личных интересах'
+	];
+	
+	if (array_key_exists($type, $types))
+	{
+		return sprintf($types[$type], $value);
+	}
+	
 	return default_title_prefix($value, $type);
 }
 

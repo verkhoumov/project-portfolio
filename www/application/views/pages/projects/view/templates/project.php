@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="project">
 			<div class="row">
-				<div class="col-12 col-lg-8">
+				<div class="col-12 col-lg-8 flex-last flex-lg-first">
 					<div class="project-header"></div>
 
 					<div class="project-body">{{{text}}}</div>
@@ -18,11 +18,11 @@
 					</div>
 				</div>
 
-				<div class="col-12 col-lg-4">
+				<div class="col-12 col-lg-4 flex-first flex-lg-last">
 					<div class="project-side">
 						{{#info.example}}
 						<div class="example">
-							<h3>Демо-доступ</h3>
+							<h3>Данные</h3>
 							
 							<ul class="list example-list">
 								<li class="overflow">Ссылка: <a href="{{info.example}}" class="underline" target="_blank">{{info.example}}</a></li>
@@ -37,7 +37,7 @@
 							<h3>Технологии</h3>
 
 							<ul class="list list-inline techs-list">
-								{{#techs}}<li><a href="/projects?q={{code}}" style="background: {{color}};">{{name}}</a></li>{{/techs}}
+								{{#techs}}<li><a href="/projects?q={{name}}" style="background: {{color}};">{{name}}</a></li>{{/techs}}
 							</ul>
 						</div>
 						{{/techs.0}}
@@ -56,7 +56,7 @@
 							<h3>Метки</h3>
 
 							<ul class="list list-inline tags-list">
-								<li><a href="{{info.category_link}}">{{info.category_name}}</a></li>{{#tags}}<li><a href="/projects?q={{code}}" title="{{tooltip}}">{{name}}</a></li>{{/tags}}
+								<li><a href="/projects?q={{info.category_name}}">{{info.category_name}}</a></li>{{#info.personal}}<li><a href="/projects?q=Личный проект">Личный проект</a></li>{{/info.personal}}{{#tags}}<li><a href="/projects?q={{name}}" title="{{tooltip}}">{{name}}</a></li>{{/tags}}
 							</ul>
 						</div>
 					</div>

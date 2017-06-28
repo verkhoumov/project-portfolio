@@ -91,7 +91,7 @@ function get_project_data($data = [])
 		$result['image'] = get_string($data['image']);
 	}
 
-	$result['image'] = get_image($result['image'], 'projects');
+	$result['image'] = get_image($result['id'].'/'.$result['image'], 'projects');
 
 	if (isset($data['year']) && $data['year'] > 0)
 	{

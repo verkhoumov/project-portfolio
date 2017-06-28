@@ -1,188 +1,248 @@
 /* SM */
-@media (min-width: 576px) {
-	body {
+@media (min-width: 576px)
+{
+	body
+	{
 		padding-bottom: 4rem;
 	}
+
 
 	/**
 	 *  Контейнеры.
 	 */
-	.container-wrapper {
+	.container-wrapper
+	{
 		padding: 3.4375rem 0;
 	}
 
-	.container-wrapper-header {
+	.container-wrapper-header
+	{
 		padding: 2.5rem 0;
 	}
 
-	.container-wrapper-skills {
+	.container-wrapper-skills
+	{
 		padding-bottom: 2.5rem;
 	}
 
-	.container-wrapper-skills-more {
+	.container-wrapper-skills-more
+	{
 		padding: 2.5rem 0;
 	}
 
-	.container-wrapper-footer {
+	.container-wrapper-footer
+	{
 		padding: 1.25rem 0;
 	}
+
 
 	/**
 	 *  Заголовки.
 	 */
-	h2 {
+	h2
+	{
 		margin-bottom: 1.8rem;
 	}
+
 
 	/**
 	 *  Кнопки.
 	 */
-	.button {
+	.button
+	{
 		display: inline-block;
+
 		width: auto;
 	}
 }
 
 /* MD */
-@media (min-width: 768px) {
-	body {
+@media (min-width: 768px)
+{
+	body
+	{
 		padding-bottom: 4.625rem;
 	}
+
 
 	/**
 	 *  Контейнеры.
 	 */
-	.container-wrapper {
+	.container-wrapper
+	{
 		padding: 4.375rem 0;
 	}
 
-	.container-wrapper-header {
+	.container-wrapper-header
+	{
 		padding: 3.125rem 0;
 	}
 
-	.container-wrapper-about {
+	.container-wrapper-about
+	{
 		background: #33275e;
 		background: linear-gradient(-260deg, #33275e 55%, #362964 55%);
 	}
 
-	.container-wrapper-skills {
+	.container-wrapper-skills
+	{
 		background: #f6f5f9;
-		background: url(/resources/img/bg-lines.png) center center no-repeat, 
-					url(/resources/img/bg-lines-connector-1.png) bottom center no-repeat, 
-					#f6f5f9;
+		background: url(/resources/img/bg-lines.png) center center no-repeat,
+		url(/resources/img/bg-lines-connector-1.png) bottom center no-repeat,
+		#f6f5f9;
 	}
 
-	.container-wrapper-skills-more {
+	.container-wrapper-skills-more
+	{
+		padding: 3.4375rem 0;
+
 		background: #efedf3;
 		background: url(/resources/img/bg-lines-connector-2.png) top center no-repeat, #efedf3;
-		padding: 3.4375rem 0;
 	}
 
-	.container-wrapper-footer {
+	.container-wrapper-footer
+	{
 		padding: 1.5625rem 0;
 	}
+
 
 	/**
 	 *  Заголовки.
 	 */
-	h2 {
+	h2
+	{
 		margin-bottom: 2.25rem;
 	}
+
 
 	/**
 	 *  Статистика.
 	 */
-	.list-stats > li {
-		margin: 0.4375rem 0;
+	.list-stats > li
+	{
+		margin: .4375rem 0;
 	}
 
-	.list-stats > li:not(:last-child) {
+	.list-stats > li:not(:last-child)
+	{
 		margin-right: 1.5625rem;
 	}
 }
 
 /* LG */
-@media (min-width: 992px) {
+@media (min-width: 992px)
+{
 	/**
 	 *  Контейнеры.
 	 */
-	.container-wrapper-about {
+	.container-wrapper-about
+	{
 		background: #33275e;
 		background: linear-gradient(-260deg, #33275e 50%, #362964 50%);
 	}
 
+
 	/**
 	 *  Навигация.
 	 */
-	.fixed .navigation-author-image {
+	.fixed .navigation-author-image
+	{
 		display: inline-block;
-		margin-right: 0.875rem;
+
+		margin-right: .875rem;
 	}
 
-	nav {
-		margin-left: -0.875rem;
+	nav
+	{
 		margin-top: 0;
+		margin-left: -.875rem;
 	}
 
-	.dropdown ~ nav {
+	.dropdown ~ nav
+	{
 		display: block;
 	}
 
-	.fixed nav {
+	.fixed nav
+	{
 		margin-left: 0;
 	}
 
-	nav .list-inline > li {
+	nav .list-inline > li
+	{
 		display: inline-block;
 	}
 
 	.fixed nav li > a,
-	.fixed nav li > span {
-	    color: #a8b1cc;
-	    background-color: transparent;
-	    margin-bottom: 0;
+	.fixed nav li > span
+	{
+		margin-bottom: 0;
+
+		color: #a8b1cc;
+		background-color: transparent;
 	}
 
 	.fixed nav li.active > a,
 	.fixed nav li > a:hover,
-	.fixed nav li.active > span {
+	.fixed nav li.active > span
+	{
 		color: #2158f4;
 		background-color: transparent;
 	}
 
+
 	/**
 	 *  Контактная информация.
 	 */
-	.contacts {
+	.contacts
+	{
+		position: absolute;
 		top: 0;
 		bottom: 0;
-		position: absolute;
 	}
 
-	.header-contacts {
+	.header-contacts
+	{
 		position: relative;
+	}
+
+
+	/**
+	 *  Информация о проекте.
+	 */
+	.project .project-side
+	{
+		margin-bottom: 0;
+		padding: 0;
+
+		border-radius: 0;
+		background: none;
 	}
 }
 
 /* XL */
-@media (min-width: 1200px) {
+@media (min-width: 1200px)
+{
 	/**
 	 *  Навыки.
 	 */
-	.skills {
+	.skills
+	{
+		position: absolute;
 		top: 0;
 		bottom: 0;
-		position: absolute;
 	}
 }
 
 /* Custom */
-@media (min-width: 1330px) {
+@media (min-width: 1330px)
+{
 	/**
 	 *  Кнопка "Наверх".
 	 */
 	.fixed-padding ~ .scroll-to-top,
-	.scroll-to-top.return {
+	.scroll-to-top.return
+	{
 		display: block;
 	}
 }

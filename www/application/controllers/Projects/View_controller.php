@@ -46,7 +46,7 @@ class View_controller extends MY_Controller
 		$tags      = $this->get_project_tags($project['id']);
 
 		// Основной материал.
-		$text = $project['text'];
+		$text = $this->Mustache->parse_string($project['text'], $project, TRUE);
 
 		// Основной материал из файла.
 		if ($project['file'])

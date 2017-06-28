@@ -50,7 +50,8 @@ class Projects_model extends MY_Model
 				FROM (
 					SELECT `P0`.*, `C0`.`code` AS `category_link`, `C0`.`name` AS `category_name`
 					FROM `{$this->db_projects}` AS `P0`
-					JOIN `{$this->db_categories}` AS `C0` ON `P0`.`visible` = 1 AND `C0`.`id` = `P0`.`category_id`
+					JOIN `{$this->db_categories}` AS `C0` ON `C0`.`id` = `P0`.`category_id`
+					WHERE `P0`.`visible` = 1
 					ORDER BY `P0`.`finished` DESC
 				) AS `P1` 
 				WHERE 
@@ -118,6 +119,7 @@ class Projects_model extends MY_Model
 		switch ($query_type)
 		{
 			case 'year': $this->search_by_year($query); break;
+			case 'personal': $this->search_by_personal(); break;
 			case 'category': $this->search_by_category($query); break;
 			case 'tech': $this->search_by_tech($query); break;
 			case 'tag': $this->search_by_tag($query); break;
@@ -162,6 +164,16 @@ class Projects_model extends MY_Model
 	public function search_by_year($query = NULL)
 	{
 		$this->db->where('YEAR(`P`.`finished`)', $query, FALSE);
+	}
+	
+	/**
+	 *  Условие для поиска личных проектов.
+	 *  
+	 *  @return  void
+	 */
+	public function search_by_personal()
+	{
+		$this->db->where('`P`.`personal`', TRUE);
 	}
 
 	/**
@@ -277,7 +289,7 @@ class Projects_model extends MY_Model
 				FROM (	
 					SELECT `id`, `code`, `name`, `title`, `description`, 'category' as `type` FROM `{$this->db_categories}`
 					UNION
-					SELECT `id`, `code`, `name`, `title`, `description`, 'tech' as `type` FROM `{$this->db_skills}` WHERE `visible` = 1
+					SELECT `id`, `code`, `name`, `title`, `description`, 'tech' as `type` FROM `{$this->db_skills}`
 					UNION
 					SELECT `id`, `code`, `name`, `title`, `description`, 'tag' as `type` FROM `{$this->db_tags}`
 				) AS `list`

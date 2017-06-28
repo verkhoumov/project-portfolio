@@ -35,10 +35,14 @@ class List_controller extends MY_Controller
 		// Обработка поискового запроса.
 		$query = $this->get_search_query();
 		$query_data = get_query_data();
+		
+		// Изменяем регистр запроса.
+		$_query = mb_strtolower($query, 'UTF-8');
 
 		// Тип запроса.
 		$query_type = is_null($query) ? 'default' : NULL;
 		$query_type = is_null($query_type) ? (is_numeric($query) && $query >= 1990 && $query <= 2050 ? 'year' : NULL) : $query_type;
+		$query_type = is_null($query_type) ? (strpos($_query, 'личн') !== FALSE || strpos($_query, 'person') !== FALSE ? 'personal' : NULL) : $query_type;
 		$query_data = is_null($query_type) ? $this->get_search_query_data($query) : $query_data;
 		$query_type = is_null($query_type) ? (is_null($query_data['type']) ? 'other' : $query_data['type']) : $query_type;
 
@@ -219,7 +223,7 @@ class List_controller extends MY_Controller
 		if (isset($get['q']))
 		{
 			// Очищаем поисковой запрос от грязи.
-			$result = get_clear_string($get['q']);
+			$result = get_clear_string($get['q']);			
 
 			if ($result == '')
 			{

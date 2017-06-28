@@ -6,7 +6,7 @@ $config['site'] = [
 	// при использовании моделей, например, на страницах с ошибками.
 	'profile' => [
 		'name'       => 'Дмитрий Верхоумов',
-		'profession' => 'Веб-разработчик полного цикла',
+		'profession' => 'Full Stack веб-разработчик',
 		'link'       => 'https://vk.com/verkhoumov',
 		'image'      => '/upload/images/profile/avatar.png'
 	],

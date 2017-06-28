@@ -1,25 +1,24 @@
 'use strict';
 
-var gulp = require('gulp');
-var gulpRunSequence = require('run-sequence');
-var gulpConcat = require('gulp-concat');
-var gulpUglify = require('gulp-uglify');
-var gulpCleanCSS = require('gulp-clean-css');
-var gulpDelete = require('del');
+var gulp             = require('gulp');
+var gulpRunSequence  = require('run-sequence');
+var gulpConcat       = require('gulp-concat');
+var gulpUglify       = require('gulp-uglify');
+var gulpCleanCSS     = require('gulp-clean-css');
+var gulpDelete       = require('del');
 var gulpAutoprefixer = require('gulp-autoprefixer');
-var gulpTinypng = require('gulp-tinypng');
+var gulpTinypng      = require('gulp-tinypng');
 
 // Приватные параметры.
 const Private = require('./private');
 
-const SRC = './src';
-const DIST = './dist';
-
 // Каталоги с файлами.
-const CSS = '/resources/css';
-const JS = '/resources/js';
-const IMG = '/resources/img';
-const UPLOAD = '/upload/images';
+const SRC        = './src';
+const DIST       = './dist';
+const CSS        = '/resources/css';
+const JS         = '/resources/js';
+const IMG        = '/resources/img';
+const UPLOAD     = '/upload/images';
 const PRODUCTION = '../www';
 
 // Настройки для плагина `gulp-clean-css`.
@@ -32,30 +31,60 @@ let cleanerSettings = {
 };
 
 /**
- *  Таски.
+ *  Ключевые таски.
  */
 // Назначение таска по-умолчанию.
 gulp.task('default', ['build']);
 
-// Ключевой таск с последовательными подтасками.
+// Сборка проекта целиком.
 gulp.task('build', function(callback) {
 	gulpRunSequence(
 		'clearDist',
-		['css', 'cssErrors', 'js', 'imgOther', 'uploadOther'],
-		'imgTinypng',
-		'uploadTinypng',
-		'copyToProduction',
+		['css', 'js'],
+		'img',
 		callback
 	);
 });
 
+// Сборка файлов стилей.
+gulp.task('css', function(callback) {
+	gulpRunSequence(
+		['_css', 'cssErrors'],
+		'cloneStylesToProject',
+		callback
+	);
+});
+
+// Сборка скриптов.
+gulp.task('js', function(callback) {
+	gulpRunSequence(
+		'_js',
+		'cloneScriptsToProject',
+		callback
+	);
+});
+
+// Сборка изображений.
+gulp.task('img', function(callback) {
+	gulpRunSequence(
+		['imgOther', 'uploadOther'],
+		'imgTinypng',
+		'uploadTinypng',
+		'cloneImagesToProject',
+		callback
+	);
+});
+
+/**
+ *  Исполнители.
+ */
 // Очистка конечной директории.
 gulp.task('clearDist', function() {
 	return gulpDelete([`${DIST}/**`, `!${DIST}`]);
 });
 
 // Обработка файлов стилей.
-gulp.task('css', function() {
+gulp.task('_css', function() {
 	return gulp.src(getStylesFiles([
 			'bootstrap',
 			'perfect-scrollbar',
@@ -85,7 +114,7 @@ gulp.task('cssErrors', function() {
 });
 
 // Обработка JavaScript-файлов.
-gulp.task('js', function() {
+gulp.task('_js', function() {
 	return gulp.src(getScriptsFiles([
 			'jquery-3.2.1',
 			'tether',
@@ -131,21 +160,30 @@ gulp.task('uploadTinypng', function() {
 		.pipe(gulp.dest(`${DIST}${UPLOAD}`));
 });
 
-// Копирование файлов в каталог с проектом.
-gulp.task('copyToProduction', function() {
-	return gulp.src(`${DIST}/**`)
-		.pipe(gulp.dest(`${PRODUCTION}`));
+// Копирование файлов стилей в каталог проекта.
+gulp.task('cloneStylesToProject', function() {
+	return gulp.src(`${DIST}/**/*.css`).pipe(
+		gulp.dest(`${PRODUCTION}`)
+	);
+});
+
+// Копирование скриптов в каталог проекта.
+gulp.task('cloneScriptsToProject', function() {
+	return gulp.src(`${DIST}/**/*.js`).pipe(
+		gulp.dest(`${PRODUCTION}`)
+	);
+});
+
+// Копирование изображений в каталог проекта.
+gulp.task('cloneImagesToProject', function() {
+	return gulp.src(`${DIST}/**/*.+(png|jpg|jpeg|gif)`).pipe(
+		gulp.dest(`${PRODUCTION}`)
+	);
 });
 
 // Формирование массива с файлами заданного формата.
 let getFiles = (files = [], path = '', format = '') => {
 	let result = [];
-
-	/*
-	if (format == 'img') {
-		format = '*';
-	}
-	*/
 
 	files.forEach((file) => {
 		result.push(`${SRC}${path}/${file}.${format}`);
@@ -163,10 +201,3 @@ let getStylesFiles = (files = []) => {
 let getScriptsFiles = (files = []) => {
 	return getFiles(files, JS, 'js');
 };
-
-/*
-// Формирование массива с изображениями.
-let getImagesFiles = (files = []) => {
-	return getFiles(files, IMG, 'img');
-};
-*/
