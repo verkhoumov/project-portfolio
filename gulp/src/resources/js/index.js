@@ -6,7 +6,7 @@ $(document).ready(function() {
 		.tooltip({
 			container: 'body',
 			placement: 'top',
-			animation: false
+			animation: true
 		});
 
 	/**

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Июн 28 2017 г., 15:29
+-- Время создания: Авг 18 2017 г., 02:01
 -- Версия сервера: 5.6.33-79.0
 -- Версия PHP: 5.3.28
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `portfolio`
+-- База данных: `u0037136_profile`
 --
 
 -- --------------------------------------------------------
@@ -31,7 +31,8 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `code` varchar(20) DEFAULT NULL COMMENT 'Ссылка на категорию',
   `name` varchar(30) DEFAULT NULL COMMENT 'Название',
   `title` varchar(100) DEFAULT NULL COMMENT 'Текст, подставляющийся в заголовок',
-  `description` varchar(200) DEFAULT NULL COMMENT 'Текст, подставляющийся в описание'
+  `description` varchar(200) DEFAULT NULL COMMENT 'Текст, подставляющийся в описание',
+  `text` text COMMENT 'Описание'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Список категорий проектов';
 
 -- --------------------------------------------------------
@@ -224,6 +225,7 @@ CREATE TABLE IF NOT EXISTS `skills` (
   `name` varchar(40) DEFAULT NULL COMMENT 'Название',
   `title` varchar(100) DEFAULT NULL COMMENT 'Текст, подставляющийся в заголовок',
   `description` varchar(200) DEFAULT NULL COMMENT 'Текст, подставляющийся в описание',
+  `text` text COMMENT 'Описание',
   `percent` decimal(3,2) unsigned NOT NULL DEFAULT '0.00' COMMENT 'Уровень знания (от 0 до 1)',
   `image` varchar(100) DEFAULT NULL COMMENT 'Изображение',
   `color` varchar(30) NOT NULL DEFAULT '#aaaaaa' COMMENT 'Цвет (если основной)',
@@ -244,6 +246,7 @@ CREATE TABLE IF NOT EXISTS `tags` (
   `tooltip` varchar(200) DEFAULT NULL COMMENT 'Описание',
   `title` varchar(100) DEFAULT NULL COMMENT 'Текст, подставляющийся в заголовок',
   `description` varchar(200) DEFAULT NULL COMMENT 'Текст, подставляющийся в описание',
+  `text` text COMMENT 'Описание',
   `created` datetime DEFAULT CURRENT_TIMESTAMP COMMENT 'Дата добавления метки'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Метки';
 

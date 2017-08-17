@@ -1,8 +1,8 @@
 <div class="scrollspy" id="about">
 	<div class="container-wrapper container-wrapper-about">
 		<div class="container">
-			<div class="row">
-				<div class="col-md-6 col-lg-5">
+			<div class="row justify-content-between">
+				<div class="col-12 col-md-6 col-lg-5">
 					<h2>Обо мне</h2>
 					
 					<div class="history-wrapper">
@@ -19,7 +19,7 @@
 					</div>
 				</div>
 
-				<div class="offset-md-1 col-md-5 offset-lg-2 mt-5 mt-md-0">
+				<div class="col-12 col-md-5 mt-5 mt-md-0">
 					<h2>Образование</h2>
 
 					<div class="education">

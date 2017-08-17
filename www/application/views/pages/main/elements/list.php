@@ -16,7 +16,7 @@
 					</div>
 
 					<div class="d-flex justify-content-between align-items-center group-project-header">
-						<a href="/projects?q={{category_name}}" class="type">#{{category_name}}</a>
+						<a href="{{category_link}}" class="type">#{{category_name}}</a>
 						<span class="date" title="Публичный релиз проекта">{{finished}}</span>
 					</div>
 

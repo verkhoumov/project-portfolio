@@ -1,13 +1,13 @@
 <div class="container container-navigation">
 	<div class="row align-items-md-start align-items-lg-center">
 		<div class="col">
-			<div class="dropdown hidden-lg-up">
+			<div class="dropdown d-block d-lg-none">
 				<div class="d-flex justify-content-between">
 					<button class="button button-menu icon icon-menu" id="dropdown-button"></button>
 
-					<div class="">
+					<div>
 						<a href="/projects" class="button button-default">Проекты</a>
-						<a href="#feedback" class="button button-primary icon icon-send icon-by-left scrolling hidden-xs-down">Написать</a>
+						<a href="#feedback" class="button button-primary icon icon-send icon-by-left scrolling d-none d-sm-inline-block">Написать</a>
 					</div>
 				</div>
 			</div>
@@ -31,11 +31,11 @@
 			</nav>
 		</div>
 
-		<div class="col col-auto hidden-md-down">
+		<div class="col col-auto d-none d-lg-block">
 			<a href="/projects" class="button button-default">Проекты</a>
 		</div>
 
-		<div class="col col-auto hidden-md-down">
+		<div class="col col-auto d-none d-lg-block">
 			<a href="#feedback" class="button button-primary icon icon-send icon-by-left scrolling">Написать</a>
 		</div>
 	</div>

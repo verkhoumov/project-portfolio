@@ -38,9 +38,25 @@ function get_query_data($data = [])
 		$result['description'] = (string) $data['description'];
 	}
 
+	if (isset($data['text']) && $data['text'] != '')
+	{
+		$result['text'] = get_clear_string($data['text']);
+	}
+
 	if (isset($data['type']) && $data['type'] != '')
 	{
 		$result['type'] = get_string($data['type']);
+	}
+
+	if (isset($data['image']) && $data['image'] != '')
+	{
+		$result['image'] = (string) $data['image'];
+		$result['image'] = get_image($result['image'], $result['type'] == 'tech' ? 'skills' : $result['type']);
+	}
+
+	if (isset($data['color']) && $data['color'] != '')
+	{
+		$result['color'] = get_string($data['color']);
 	}
 
 	return $result;
@@ -59,6 +75,9 @@ function get_default_query_data()
 		'name'        => NULL,
 		'title'       => NULL,
 		'description' => NULL,
+		'text'        => NULL,
+		'image'       => NULL,
+		'color'       => NULL,
 		'type'        => NULL
 	];
 }

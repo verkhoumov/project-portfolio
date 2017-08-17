@@ -117,7 +117,7 @@ gulp.task('cssErrors', function() {
 gulp.task('_js', function() {
 	return gulp.src(getScriptsFiles([
 			'jquery-3.2.1',
-			'tether',
+			'popper',
 			'jquery.magnific-popup',
 			'perfect-scrollbar.jquery',
 			'highlight.pack',

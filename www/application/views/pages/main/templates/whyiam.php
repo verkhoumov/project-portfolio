@@ -3,8 +3,8 @@
 		<div class="container container-whyiam">
 			<h2>Почему я?</h2>
 
-			<div class="row align-items-center">
-				<div class="col-lg-5">
+			<div class="row align-items-center justify-content-between">
+				<div class="col-12 col-lg-5">
 					<div class="theses">
 						{{#theses}}
 						<div class="d-flex justify-content-start thesis">
@@ -19,7 +19,7 @@
 					</div>
 				</div>
 
-				<div class="offset-lg-1 col-lg-6 mt-5 mt-lg-0">
+				<div class="col-12 col-lg-6 mt-5 mt-lg-0">
 					<div class="video" id="whyiam-video">
 						<div class="row align-items-center">
 							<div class="col-12 col-sm-6">
@@ -85,8 +85,8 @@
 						</div>
 					</div>
 					
-					<div class="row">
-						<div class="offset-2 col-8">
+					<div class="row justify-content-center">
+						<div class="col-8">
 							<p class="tip">Разбор ошибок некоторых популярных веб-сайтов и сервисов.</p>
 						</div>
 					</div>

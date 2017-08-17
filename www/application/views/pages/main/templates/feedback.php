@@ -1,8 +1,8 @@
 <div class="scrollspy" id="feedback">
 	<div class="container-wrapper container-wrapper-feedback">
 		<div class="container">
-			<div class="row">
-				<div class="offset-lg-1 col-lg-5 offset-xl-2 flex-lg-last">
+			<div class="row justify-content-between">
+				<div class="col-12 col-lg-5 order-lg-12">
 					<div class="d-lg-flex align-content-lg-between flex-lg-wrap contacts">
 						{{#contacts}}
 							<div class="contacts-header">
@@ -25,11 +25,11 @@
 					</div>
 				</div>
 
-				<div class="col-lg-6 col-xl-5 flex-lg-first feedback mt-5 mt-lg-0">
+				<div class="col-12 col-lg-6 col-xl-5 order-lg-1 feedback mt-5 mt-lg-0">
 					<h2>Обратная связь</h2>
 					
-					<div class="row">
-						<div class="offset-sm-1 col-sm-10 offset-md-2 col-md-8 offset-lg-0 col-lg-12">
+					<div class="row justify-content-center">
+						<div class="col-12 col-sm-10 col-md-8 col-lg-12">
 							<div class="wall">
 								<form>
 									<div class="form-group">

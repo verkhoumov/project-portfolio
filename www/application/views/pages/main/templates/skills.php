@@ -4,8 +4,8 @@
 		<div class="container">
 			<h2 class="inverse">Навыки</h2>
 
-			<div class="row hidden-sm-down">
-				<div class="col-lg-12 col-xl-3">
+			<div class="row d-none d-md-flex">
+				<div class="col-12 col-xl-3">
 					<div class="d-xl-flex align-content-xl-between flex-xl-wrap skills">
 						<div class="skills-info">
 							<p>Чтобы узнать уровень владения навыком, наведите на него или нажмите «Показать всё».</p>
@@ -17,7 +17,7 @@
 					</div>
 				</div>
 
-				<div class="col-lg-12 col-xl-6 mt-5 mt-xl-0">
+				<div class="col-12 col-xl-6 mt-5 mt-xl-0">
 					<div class="skills-map-wrapper">
 						<div class="d-flex align-items-center justify-content-center skills-map">
 							<div class="skills-map-brain icon icon-brain">
@@ -43,7 +43,7 @@
 				</div>
 			</div>
 
-			<div class="row hidden-md-up">
+			<div class="row d-flex d-md-none">
 				<div class="col-12">
 					<p>Перечень основных навыков.</p>
 				</div>
@@ -93,7 +93,7 @@
 					</div>
 					{{/other}}
 
-					<div class="col col-sm-8 col-md-6 col-lg-4">
+					<div class="col-12 col-sm-8 col-md-6 col-lg-4">
 						<div class="d-flex align-items-center skills-more-text">
 							<p>Более {{experience}} опыта и {{count}} веб-разработки</p>
 						</div>

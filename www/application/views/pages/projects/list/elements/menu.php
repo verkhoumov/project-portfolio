@@ -1,7 +1,7 @@
 <div class="container container-navigation">
 	<div class="row align-items-md-start align-items-lg-center">
 		<div class="col">
-			<div class="dropdown hidden-lg-up">
+			<div class="dropdown d-block d-lg-none">
 				<div class="d-flex justify-content-between">
 					<button class="button button-menu icon icon-menu" id="dropdown-button"></button>
 					<a href="/#feedback" class="button button-primary icon icon-send icon-by-left" style="max-width: 160px;">Написать</a>
@@ -23,7 +23,7 @@
 			</nav>
 		</div>
 
-		<div class="col col-auto hidden-md-down">
+		<div class="col col-auto d-none d-lg-block">
 			<div class="text-right">
 				<a href="/#feedback" class="button button-primary icon icon-send icon-by-left">Написать</a>
 			</div>

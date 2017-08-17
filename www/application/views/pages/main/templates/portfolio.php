@@ -10,8 +10,8 @@
 
 	<div class="container-wrapper container-wrapper-portfolio-more">
 		<div class="container text-center">
-			<div class="row">
-				<div class="offset-0 col-12 offset-sm-1 col-sm-10 offset-md-2 col-md-8 offset-lg-3 col-lg-6 offset-xl-4 col-xl-4 text-center">
+			<div class="row justify-content-center">
+				<div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4 text-center">
 					<p>Мало? На странице с проектами представлены все мои работы! Также там есть удобный поиск, с помощью которого можно найти любой проект.</p>
 					<a href="/projects" class="button">Перейти к списку проектов</a>
 				</div>

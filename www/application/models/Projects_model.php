@@ -287,11 +287,11 @@ class Projects_model extends MY_Model
 			$query = "
 				SELECT * 
 				FROM (	
-					SELECT `id`, `code`, `name`, `title`, `description`, 'category' as `type` FROM `{$this->db_categories}`
+					SELECT `id`, `code`, `name`, `title`, `description`, `text`, NULL as `image`, NULL as `color`, 'category' as `type` FROM `{$this->db_categories}`
 					UNION
-					SELECT `id`, `code`, `name`, `title`, `description`, 'tech' as `type` FROM `{$this->db_skills}`
+					SELECT `id`, `code`, `name`, `title`, `description`, `text`, `image`, `color`, 'tech' as `type` FROM `{$this->db_skills}`
 					UNION
-					SELECT `id`, `code`, `name`, `title`, `description`, 'tag' as `type` FROM `{$this->db_tags}`
+					SELECT `id`, `code`, `name`, `title`, `description`, `text`, NULL as `image`, NULL as `color`, 'tag' as `type` FROM `{$this->db_tags}`
 				) AS `list`
 				WHERE `code` = {$query} OR `name` = {$query}
 				LIMIT 1

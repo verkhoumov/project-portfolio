@@ -2302,6 +2302,69 @@ nav li.active > span
 /**
  *  Страница с поиском проектов.
  */
+/* Подсказка при определённых поисковых запросах */
+.search-info {
+	margin-top: 2rem;
+}
+
+.search-info > .item {
+	padding: 1.25rem;
+	background: #2158f4;
+	border-radius: 4px;
+	box-shadow: 0 0 40px 2px rgba(0, 0, 0, 0.1);
+	position: relative;
+}
+
+.search-info > .item::after {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    content: '?';
+    text-align: center;
+    vertical-align: middle;
+    line-height: 20px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+}
+
+.search-info > .item > .image {
+	width: 70px;
+	min-width: 70px;
+	height: 70px;
+	border-radius: 3px;
+	overflow: hidden;
+	background: #ffffff;
+	padding: 0.3125rem;
+}
+
+.search-info > .item > .image > img {
+	object-fit: contain;
+}
+
+.search-info > .item > article {
+
+}
+
+.search-info > .item > article > h2 {
+    margin: 0;
+    text-transform: none;
+    font-size: 1rem;
+	line-height: 1.75;
+	color: rgba(255, 255, 255, 0.95);
+}
+
+.search-info > .item > article > p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.5;
+    margin-top: 0.35rem;
+}
 
 
 /**
@@ -2630,12 +2693,40 @@ nav li.active > span
 /**
  *  Поделиться.
  */
+.share {
+	text-align: center;
+}
+
 .share p
 {
 	font-size: .875rem;
+}
 
-	margin: 0;
-	margin-right: .625rem;
+
+/**
+ *  Редизайн YandexShare.
+ */
+.ya-share2-redesign {
+	text-align: center;
+}
+
+.ya-share2-redesign .ya-share2__container_size_m .ya-share2__item {
+	margin-right: 10px;
+}
+
+.ya-share2-redesign .ya-share2__badge {
+	padding: 7px;
+	border-radius: 50%;
+}
+
+.ya-share2-redesign .ya-share2__icon:active {
+	box-shadow: none;
+}
+
+.ya-share2-redesign .ya-share2__container_size_m .ya-share2__icon {
+	height: 30px;
+	width: 30px;
+	background-size: 30px 30px;
 }
 
 

@@ -16,4 +16,23 @@
 	</form>
 
 	<p class="help">В качестве запроса можно использовать <u title="2015, 2016, 2017 и т.п.">год</u>, <u title="NodeJS, CodeIgniter, SocketIO и т.п.">название технологии</u>, <u title="Дизайн, разработка, документ и т.п.">тип проекта</u> или просто <u title="ИТМО, практика, диплом и т.п.">слова</u>.</p>
+	
+	{{#info}}{{#text}}
+	<div class="search-info">
+		<div class="d-flex justify-content-start align-items-center item {{type}}"{{#color}} style="background: {{color}};"{{/color}}>
+			<!--
+			{{#image}}
+			<div class="image mr-3">
+				<img src="{{image}}" alt="{{name}}">
+			</div>
+			{{/image}}
+			-->
+	
+			<article>
+				<h2>{{name}}</h2>
+				<p>{{text}}</p>
+			</article>
+		</div>
+	</div>
+	{{/text}}{{/info}}
 </div>

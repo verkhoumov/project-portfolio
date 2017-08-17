@@ -46,6 +46,13 @@ class List_controller extends MY_Controller
 		$query_data = is_null($query_type) ? $this->get_search_query_data($query) : $query_data;
 		$query_type = is_null($query_type) ? (is_null($query_data['type']) ? 'other' : $query_data['type']) : $query_type;
 
+		// Заменяем кодовое имя из запроса на полноценное название.
+		if ($query_data['id'] > 0) {
+			$query = $query_data['name'];
+		} elseif ($query_type == 'personal') {
+			$query = 'Личный проект';
+		}
+
 		// Данные.
 		$profile  = $this->get_profile();
 		$projects = $this->search_projects($query, $query_type);
@@ -53,6 +60,10 @@ class List_controller extends MY_Controller
 		// Прочие данные.
 		$title = get_search_title(in_array($query_type, ['year', 'other']) ? $query : $query_data['name'], $query_data['title'], $query_type);
 		$description = get_search_description(in_array($query_type, ['year', 'other']) ? $query : $query_data['name'], $query_data['title'], $query_data['description'], $query_type);
+
+		if ($query_data['id'] == 0) {
+			$query_data = [];
+		}
 
 		// Данные для подстановки в шаблоны.
 		$data = [
@@ -88,7 +99,8 @@ class List_controller extends MY_Controller
 							'queryType' => $query_type
 						],
 						'search' => [
-							'query' => $query
+							'query' => $query,
+							'info'  => $query_data
 						],
 						'list' => $projects,
 					]

@@ -365,31 +365,29 @@ function get_noun_word_index($number = 0)
 {
 	$number = (integer) $number;
 
-	$result = 2;
-
-	// Результат: 5 яблок.
 	$number %= 100;
 
-	if ($number >= 5 && $number <= 20)
+	// Результат: 5 яблок.
+	if ($number > 10 && $number < 20)
 	{
-		$result = 2;
+		return 2;
+	}
+
+	$number %= 10;
+
+	// Результат: 2 яблока.
+	if ($number > 1 && $number < 5)
+	{
+		return 1;
 	}
 
 	// Результат: 1 яблоко.
-	$number %= 10;
-
 	if ($number == 1)
 	{
-		$result = 0;
+		return 0;
 	}
 
-	// Результат: 2 яблока.
-	if ($number >= 2 && $number <= 4)
-	{
-		$result = 1;
-	}
-
-	return $result;
+	return 2;
 }
 
 /**
