@@ -464,12 +464,21 @@ $(document).ready(function() {
 				if (status == 200) {
 					// Создаём новый блок с ошибкой.
 					var $alert = $('<div></div>').addClass('alert alert-success mb-4').text('Ваше сообщение было успешно отправлено! Ответ будет выслан Вам в ближайшие 24 часа!');
+					
+					setTimeout(function() {
+						$alert.fadeOut(500, function() {
+							$(this).remove();
+						});
+					}, 5 * 1000);
 
 					// Вставляем после поля.
 					$wall.prepend($alert);
 
 					// Очищаем форму.
 					$form[0].reset();
+
+					// Фиксируем событие в Yandex.Metrika.
+					yaCounter45656544.reachGoal('feedback');
 				} else {
 					console.log('Во время выполнения запроса произошла ошибка: ', status);
 
