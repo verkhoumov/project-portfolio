@@ -14,7 +14,7 @@ var scrollToPosition = function(position, addMenuH, callback) {
 	var speed = Math.floor(Math.abs(scrollY - destY) / speed);
 
 	// Инициализация скроллинга.
-	$('body').animate({
+	$('html, body').animate({
 		scrollTop: destY
 	}, speed, function() {
 		if (typeof callback === 'function') {
