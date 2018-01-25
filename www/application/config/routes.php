@@ -80,3 +80,15 @@ $route['ajax/feedback$'] = 'Ajax/Ajax_controller/feedback';
  *  CRON.
  */
 $route['cron/sitemap/(:any)$'] = 'Cron/Sitemap_controller/index/$1';
+
+/**
+ *  API.
+ */
+$route['api/profile/(get|put|delete)$']   = 'Api/Profile_controller/$1';
+$route['api/about/(get|put|delete)$']     = 'Api/About_controller/$1';
+$route['api/theses/(get|put|delete)$']    = 'Api/Theses_controller/$1';
+$route['api/video/(get|put|delete)$']     = 'Api/Video_controller/$1';
+$route['api/education/(get|put|delete)$'] = 'Api/Education_controller/$1';
+$route['api/skills/(get|put|delete)$']    = 'Api/Skills_controller/$1';
+$route['api/portfolio/(get|put|delete)$'] = 'Api/Portfolio_controller/$1';
+$route['api/contacts/(get|put|delete)$']  = 'Api/Contacts_controller/$1';

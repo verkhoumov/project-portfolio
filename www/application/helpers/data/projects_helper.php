@@ -234,7 +234,7 @@ function group_projects_list($data = [], $stats = [])
 		{
 			$value = filter_array($value, [
 				'category_link', 'category_name', 'name', 'link', 'image', 'year', 
-				'_finished', 'finished', 'percent', 'progress', 'personal'
+				'created', 'description', 'text', '_finished', 'finished', 'percent', 'progress', 'personal'
 			]);
 
 			// Общее количество проектов за год.

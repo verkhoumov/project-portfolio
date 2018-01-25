@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&subset=cyrillic,cyrillic-ext,latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&subset=cyrillic');
 
 html
 {
@@ -177,8 +177,8 @@ p,
 ul,
 ol
 {
-	font-size: 1rem;
-	line-height: 1.75;
+	font-size: 15px;
+    line-height: 1.55;
 
 	margin-top: 0;
 	margin-bottom: 1rem;
@@ -600,19 +600,41 @@ select
 /**
  *  Подсказки.
  */
-.tooltip
-{
+.tooltip {
 	font-family: inherit;
 	font-size: .825rem;
 	font-weight: inherit;
 	line-height: 1.3;
 }
 
-.tooltip-inner
-{
-	padding: .3125rem .5rem .375rem;
+.tooltip-inner {
+	line-height: 1.5;
+	max-width: 300px;
+	padding: 6px 8px 7px;
+	text-align: center;
+	color: #FFF;
+	border-radius: 0;
+	background-color: rgba(0,0,0,.9);
+}
 
-	border-radius: 4px;
+.tooltip.bs-tooltip-top .arrow::before,
+.tooltip.bs-tooltip-auto[x-placement^='top'] .arrow::before {
+	border-top-color: rgba(0,0,0,.9);
+}
+
+.tooltip.bs-tooltip-right .arrow::before,
+.tooltip.bs-tooltip-auto[x-placement^='right'] .arrow::before {
+	border-right-color: rgba(0,0,0,.9);
+}
+
+.tooltip.bs-tooltip-bottom .arrow::before,
+.tooltip.bs-tooltip-auto[x-placement^='bottom'] .arrow::before {
+	border-bottom-color: rgba(0,0,0,.9);
+}
+
+.tooltip.bs-tooltip-left .arrow::before,
+.tooltip.bs-tooltip-auto[x-placement^='left'] .arrow::before {
+	border-left-color: rgba(0,0,0,.9);
 }
 
 

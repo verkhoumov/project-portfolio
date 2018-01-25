@@ -4,9 +4,7 @@ $(document).ready(function() {
 	 */
 	$('[title]')
 		.tooltip({
-			container: 'body',
-			placement: 'top',
-			animation: true
+			offset: '0, 3px'
 		});
 
 	/**
