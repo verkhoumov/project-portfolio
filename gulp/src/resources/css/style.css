@@ -2388,6 +2388,11 @@ nav li.active > span
     margin-top: 0.35rem;
 }
 
+.search-info > .item > article .link {
+	font-weight: 500;
+    color: #fff;
+}
+
 
 /**
  *  Шапка страницы "Проекты".

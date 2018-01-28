@@ -31,6 +31,7 @@
 			<article>
 				<h2>{{name}}</h2>
 				<p>{{text}}</p>
+				{{#link}}<!--noindex--><p><a href="{{link}}" class="link underline" target="_blank" rel="nofollow">{{link}}</a></p><!--/noindex-->{{/link}}
 			</article>
 		</div>
 	</div>

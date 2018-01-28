@@ -113,6 +113,12 @@
 					projectsList
 				))
 			);
+
+			// Обновляем Tooltip.
+			$container.find('[title]')
+				.tooltip({
+					offset: '0, 3px'
+				});
 		});
 	};
 }) (jQuery);

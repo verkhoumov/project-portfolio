@@ -43,6 +43,11 @@ function get_query_data($data = [])
 		$result['text'] = get_clear_string($data['text']);
 	}
 
+	if (isset($data['link']) && $data['link'] != '')
+	{
+		$result['link'] = get_clear_string($data['link']);
+	}
+
 	if (isset($data['type']) && $data['type'] != '')
 	{
 		$result['type'] = get_string($data['type']);
@@ -75,6 +80,7 @@ function get_default_query_data()
 		'name'        => NULL,
 		'title'       => NULL,
 		'description' => NULL,
+		'link'        => NULL,
 		'text'        => NULL,
 		'image'       => NULL,
 		'color'       => NULL,
