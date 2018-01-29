@@ -215,14 +215,16 @@ function get_default_project_data()
 /**
  *  Группировка списка проектов для главной страницы.
  *  
- *  @param   array   $data   [Список проектов]
- *  @param   array   $stats  [Количество проектов за каждый год]
+ *  @param   array   $data     [Список проектов]
+ *  @param   array   $stats    [Количество проектов за каждый год]
+ *  @param   array   $android  [Группировка для приложения на Android]
  *  @return  array
  */
-function group_projects_list($data = [], $stats = [])
+function group_projects_list($data = [], $stats = [], $android = FALSE)
 {
-	$data = (array) $data;
-	$stats = (array) $stats;
+	$data    = (array) $data;
+	$stats   = (array) $stats;
+	$android = (boolean) $android;
 
 	$result   = [];
 	$years    = [];
@@ -232,10 +234,19 @@ function group_projects_list($data = [], $stats = [])
 	{
 		foreach ($data as $key => $value)
 		{
-			$value = filter_array($value, [
+			$keys = [
 				'category_link', 'category_name', 'name', 'link', 'image', 'year', 
-				'created', 'description', 'text', '_finished', 'finished', 'percent', 'progress', 'personal'
-			]);
+				'created', '_finished', 'finished', 'percent', 'progress', 'personal'
+			];
+
+			// Для приложения на Android необходимо описание проекта.
+			if ($android)
+			{
+				$keys[] = 'description';
+				$keys[] = 'text';
+			}
+
+			$value = filter_array($value, $keys);
 
 			// Общее количество проектов за год.
 			$projects_count = $stats[$value['year']]['count'];

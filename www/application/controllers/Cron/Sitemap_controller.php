@@ -130,7 +130,7 @@ class Sitemap_controller extends MY_Controller
 					continue;
 				}
 
-				$this->Sitemap->addItem('projects/'.$project['link'], '0.75', 'monthly', $project['created']);
+				$this->Sitemap->addItem('projects/'.$project['link'], '0.75', 'monthly', $project['updated']);
 			}
 		}
 

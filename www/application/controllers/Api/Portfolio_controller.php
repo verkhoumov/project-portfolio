@@ -32,7 +32,7 @@ class Portfolio_controller extends MY_Controller
 		$stats = $this->Projects_model->get_stats();
 		$data = $this->Projects_model->get_list();
 		$data = get_projects_data($data);
-		$data = group_projects_list($data, $stats);
+		$data = group_projects_list($data, $stats, TRUE);
 
 		// Объединяем данные в один список.
 		$list = [];

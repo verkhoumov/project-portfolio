@@ -20,14 +20,6 @@
 	{{#info}}{{#text}}
 	<div class="search-info">
 		<div class="d-flex justify-content-start align-items-center item {{type}}"{{#color}} style="background: {{color}};"{{/color}}>
-			<!--
-			{{#image}}
-			<div class="image mr-3">
-				<img src="{{image}}" alt="{{name}}">
-			</div>
-			{{/image}}
-			-->
-	
 			<article>
 				<h2>{{name}}</h2>
 				<p>{{text}}</p>
